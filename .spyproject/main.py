@@ -20,8 +20,11 @@ def main():
     l = 1.0
     F = makeF(F0,p0,l)
     print(F)
+    hello()
     elts = makeElements(EI,F0,w0,l,N)
     K = makeK(elts)
+    M = makeM(elts)
+    print(M)
     print(K)
     w = calcW(K,F,w0,N)
     showGraph(w,l,l*N+l)

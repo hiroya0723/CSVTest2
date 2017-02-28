@@ -15,7 +15,7 @@ class Element(object):
         self.l = l
         self.N = N
         
-    def makeKbCblist(self):
+    def makeKblist(self):
         l = self.l
         tmp = [[0 for i in range(4)] for j in range(4)]
         i = 0
@@ -54,7 +54,7 @@ class Element(object):
         tmp[i][j] = 6/l**2
         j = j + 1
         tmp[i][j] = 4/l
-        
+
        # w = self.w
        # i = 0
         #for  in w:
@@ -62,6 +62,48 @@ class Element(object):
         
         return np.array(tmp)*self.EI
 
+    def makeMblist(self):
+        l = self.l
+        tmp = [[0 for i in range(4)] for j in range(4)]
+        i = 0
+        j = 0
+        tmp[i][j] = 156
+        j = j + 1
+        tmp[i][j] = -22*l
+        j = j + 1
+        tmp[i][j] = 54
+        j = j + 1
+        tmp[i][j] = 13*l
+        i = i + 1
+        j = 0
+        tmp[i][j] = -22*l
+        j = j + 1
+        tmp[i][j] = 4*l**2
+        j = j + 1
+        tmp[i][j] = -13*l
+        j = j + 1
+        tmp[i][j] = -3*l**2
+        i = i + 1
+        j = 0
+        tmp[i][j] = 54
+        j = j + 1
+        tmp[i][j] = -13*l
+        j = j + 1
+        tmp[i][j] = 156
+        j = j + 1
+        tmp[i][j] = 22*l
+        i = i + 1
+        j = 0
+        tmp[i][j] = 13*l
+        j = j + 1
+        tmp[i][j] = -3*l**2
+        j = j + 1
+        tmp[i][j] = 22*l
+        j = j + 1
+        tmp[i][j] = 4*l**2
+
+        return tmp      
+        
     def checknotfixedNum(self):
         num = []
         for i in range(len(self.w0)):

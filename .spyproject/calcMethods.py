@@ -24,9 +24,16 @@ def mergeMatrix(Mat,N):
 def makeK(elts):
     tmpK = []
     for elt in elts:
-        tmpK.append(elt.makeKbCblist())
+        tmpK.append(elt.makeKblist())
     return mergeMatrix(tmpK,len(elts))
     
+def makeM(elts):
+    tmpK = []
+    for elt in elts:
+        tmpK.append(elt.makeMblist())
+    return mergeMatrix(tmpK,len(elts))
+    
+
 def makeElements(EI,F,w0,l,N):
     elts = []
     for i in range(N):
@@ -81,16 +88,6 @@ def showGraph(w,l,L):
     print(y)    
     plt.plot(x,y)
     return 0
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
     
 def hello():
     print("test")
