@@ -17,14 +17,14 @@ def main():
     F0 = np.array([0,0,0,0,0,0,0,0,0,0])
     p0 = 4.0
     EI=1
-    l = 1
+    l = 1.0
     F = makeF(F0,p0,l)
     print(F)
     elts = makeElements(EI,F0,w0,l,N)
     K = makeK(elts)
     print(K)
     w = calcW(K,F,w0,N)
-    print(w)
+    showGraph(w,l,l*N+l)
     
 if __name__ == '__main__':
     main()

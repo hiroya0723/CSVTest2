@@ -7,6 +7,7 @@ Created on Fri Feb 17 21:11:11 2017
 """
 
 import numpy as np
+import matplotlib.pyplot as plt
 from Element import *
 
 def mergeMatrix(Mat,N):
@@ -72,6 +73,15 @@ def makeF(F0,p0,l):
     p[-2] = 1
     p = -p*l/(num-2)*p0
     return p+F0
+    
+def showGraph(w,l,L):
+    x = np.arange(0,L,l)
+    
+    y = w[::2]
+    print(y)    
+    plt.plot(x,y)
+    return 0
+    
         
     
     
