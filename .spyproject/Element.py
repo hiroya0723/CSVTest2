@@ -68,11 +68,6 @@ class Element(object):
             if not self.w0[i] == 0:
                 num.append(i)
         return num
-    
-    
-    def hello(self):
-        print("hello")
-        
         
         
         
